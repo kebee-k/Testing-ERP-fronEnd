@@ -39,23 +39,23 @@ public class addEmployee {
             categories.click();
             subMenu = driver.findElement(By.xpath("//*[text()='Dashboard']"));
             subMenu.click();
-            Thread.sleep(5);
+            Thread.sleep(100);
             all = driver.findElement(By.xpath("//*[text()='All Employees']"));
             all.click();
-            Thread.sleep(1);
+            Thread.sleep(100);
             course = driver.findElement(By.xpath("//*[text()='Add Employee']"));
             course.click();
-            Thread.sleep(1000);
+            Thread.sleep(10000);
             at = driver.findElement(By.xpath("//div[@class='card-body']"));
             at.click();
             add = driver.findElement(By.xpath("//input[@name='firstName']"));
             add.sendKeys("kebe");
             add = driver.findElement(By.xpath("//input[@name='lastName']"));
             add.sendKeys("kebee");
-            Thread.sleep(10);
+            Thread.sleep(100);
             add = driver.findElement(By.xpath("//input[@name='email']"));
             add.sendKeys("sale@test.com");
-            Thread.sleep(10);
+            Thread.sleep(100);
             add = driver.findElement(By.xpath("//input[@name='telephone']"));
             add.sendKeys("0978096867");
             add = driver.findElement(By.xpath("//input[@name='birthDate']"));
@@ -65,15 +65,15 @@ public class addEmployee {
             Select ell = new Select(driver
                     .findElement(By.xpath("//div[@class='row']//div[@class='col-md-4']//select[@class='form-control']")));
             ell.selectByVisibleText("Sales");
-            Thread.sleep(10);
+            Thread.sleep(1000);
             Select ell2 = new Select(
                     driver.findElement(By.xpath("//div[@class='row']//div[@class='col-md-4']//select[@id='test']")));
             ell2.selectByVisibleText("Sales Representative");
-            Thread.sleep(10);
+            Thread.sleep(1000);
             Select ell22 = new Select(
                     driver.findElement(By.xpath("//div[@class='row']//div[@class='col-md-4']//select[@id='test1']")));
             ell22.selectByVisibleText("Junior");
-            Thread.sleep(10);
+            Thread.sleep(1000);
             can = driver.findElement(By.xpath("//div[@class='row']//input[@name='hiredDate']"));
             can.sendKeys("6-6-2020");
             Select ell3 = new Select(driver.findElement(
