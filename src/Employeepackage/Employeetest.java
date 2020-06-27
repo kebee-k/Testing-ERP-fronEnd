@@ -49,12 +49,12 @@ public class Employeetest {
     public Object[][] TestDataFeed() {
         readExcelData file = new readExcelData(
                 "/home/keby/IdeaProjects/Testing-erp-frontEnd/src/dataLocater/ExcelRead.xlsx");
-        int row = file.getRowCount(0);
+        int row = file.getRowCount(1);
         //   System.out.println("numbers of row in sheet is "+row);
         Object[][] Credential = new Object[row][2];
         for (int i = 0; i < row; i++) {
-            Credential[i][0] = file.getData(0, i, 0);
-            Credential[i][1] = file.getData(0, i, 1);
+            Credential[i][0] = file.getData(1, i, 0);
+            Credential[i][1] = file.getData(1, i, 1);
         }
         return Credential;
     }
