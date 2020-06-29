@@ -8,28 +8,31 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.File;
 import java.io.FileInputStream;
 
-public class readExcelData{
+public class readExcelData {
     XSSFWorkbook WEB;
     XSSFSheet sheet;
-    public  readExcelData(String excelPath){
+
+    public readExcelData(String excelPath) {
         try {
             File src = new File(excelPath);
-            FileInputStream  fls = new FileInputStream(src);
+            FileInputStream fls = new FileInputStream(src);
             WEB = new XSSFWorkbook(fls);
-        }
-        catch (Exception  e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
-   public  String  getData(int SheetNumber, int row, int column){
-      sheet= WEB.getSheetAt(SheetNumber);
+
+    public String getData(int SheetNumber, int row, int column) {
+        sheet = WEB.getSheetAt(SheetNumber);
 
 
-      String data =sheet.getRow(row).getCell(column).getStringCellValue();
-      return  data;
-   }
+        String data = sheet.getRow(row).getCell(column).getStringCellValue();
+        return data;
+    }
+
     public int getRowCount(int sheetIndex) {
         int row = WEB.getSheetAt(sheetIndex).getLastRowNum();
+        System.out.println(row+"rwoo");
         row = row + 1;
         return row;
     }
