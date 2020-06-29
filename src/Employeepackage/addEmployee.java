@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class addEmployee extends basesClass {
 
-    @Test (priority = 1)
+    @Test(priority = 1)
     public void addEmployeeToFinanceDept() throws InterruptedException {
         readExcelData eat = new readExcelData(
                 "/home/keby/IdeaProjects/Testing-erp-frontEnd/src/dataLocater/ExcelRead.xlsx");
@@ -21,7 +21,7 @@ public class addEmployee extends basesClass {
             String firstName = eat.getData(2, 1, 0);
             String lastName = eat.getData(2, 1, 1);
             String email = eat.getData(2, 1, 2);
-            String Email = "ke"+val + email;
+            String Email = "ke" + val + email;
             String telephone = eat.getData(2, 1, 3);
             String Phone = telephone + val;
             String birthDate = eat.getData(2, 1, 4);
@@ -90,8 +90,9 @@ public class addEmployee extends basesClass {
 
         }
     }
+
     @Test(priority = 2)
-    public void  addEmployeeToSaleDept() throws InterruptedException {
+    public void addEmployeeToSaleDept() throws InterruptedException {
         readExcelData eat = new readExcelData(
                 "/home/keby/IdeaProjects/Testing-erp-frontEnd/src/dataLocater/ExcelRead.xlsx");
         int rowCount = eat.getRowCount(2);
@@ -159,8 +160,9 @@ public class addEmployee extends basesClass {
 
         }
     }
+
     @Test(priority = 3)
-    public void  AddEmployeeTOInventoryDept() throws InterruptedException {
+    public void AddEmployeeTOInventoryDept() throws InterruptedException {
         readExcelData eat = new readExcelData(
                 "/home/keby/IdeaProjects/Testing-erp-frontEnd/src/dataLocater/ExcelRead.xlsx");
         int rowCount = eat.getRowCount(2);
@@ -221,8 +223,9 @@ public class addEmployee extends basesClass {
             }
         }
     }
+
     @Test
-    public void  AddEmployeeToHrDept() throws InterruptedException {
+    public void AddEmployeeToHrDept() throws InterruptedException {
         readExcelData eat = new readExcelData(
                 "/home/keby/IdeaProjects/Testing-erp-frontEnd/src/dataLocater/ExcelRead.xlsx");
         int rowCount = eat.getRowCount(2);
