@@ -3,6 +3,7 @@ package Employeepackage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -12,8 +13,9 @@ public class basesClass {
         WebElement username,password;
         @BeforeMethod
         public  void setUpBrowser() throws InterruptedException {
-            System.setProperty("webdriver.gecko.driver", "/home/keby/Desktop/seleniumjava/geckodriver");
-            driver = new FirefoxDriver();
+            System.setProperty("webdriver.chrome.driver", "/home/addiaba/selenium.jar/chromedriver_linux64/chromedriver");
+          //  driver = new FirefoxDriver();
+            driver= new ChromeDriver();
             driver.get("https://sparta-erp.web.app/");
             System.out.println("start");
            username= driver.findElement(By.name("username"));

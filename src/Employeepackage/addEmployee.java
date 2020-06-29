@@ -3,7 +3,6 @@ package Employeepackage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Random;
@@ -13,7 +12,7 @@ public class addEmployee extends basesClass {
     @Test (priority = 1)
     public void addEmployeeToFinanceDept() throws InterruptedException {
         readExcelData eat = new readExcelData(
-                "/home/keby/IdeaProjects/Testing-erp-frontEnd/src/dataLocater/ExcelRead.xlsx");
+                "/home/addiaba/Testing-ERP-fronEnd/src/dataLocater/ExcelRead.xlsx");
         int rowCount = eat.getRowCount(2);
         for (int rowNUm = 1; rowNUm <= rowCount; rowNUm++) {
             Random random = new Random();
