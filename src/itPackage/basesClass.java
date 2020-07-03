@@ -1,4 +1,4 @@
-package Employeepackage;
+package itPackage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class basesClass {
+
         public static WebDriver driver;
         WebElement username,password;
 
@@ -17,8 +18,8 @@ public class basesClass {
             driver = new FirefoxDriver();
             driver.get("https://sparta-erp.web.app/");
             System.out.println("start");
-           username= driver.findElement(By.name("username"));
-           username.sendKeys("admin");
+            username= driver.findElement(By.name("username"));
+            username.sendKeys("admin");
             Thread.sleep(50);
             password=driver.findElement(By.name("password"));
             password.sendKeys("admin");
@@ -34,10 +35,9 @@ public class basesClass {
         }
 
         @AfterMethod
-     public  void closeBrowser()
+        public  void closeBrowser()
         {
             driver.quit();
         }
-
 
 }
