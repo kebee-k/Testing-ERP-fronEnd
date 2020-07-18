@@ -159,7 +159,7 @@ public class addEmployee extends basesClass {
         }
     }
 
-    @Test
+    @Test(dependsOnMethods = {"addEmployeeToSaleDept"})
     public void AddEmployeeTOInventoryDept() throws InterruptedException {
         readExcelData eat = new readExcelData(
                 "/home/keby/IdeaProjects/Testing-erp-frontEnd/src/dataLocater/ExcelRead.xlsx");
@@ -224,7 +224,7 @@ public class addEmployee extends basesClass {
         }
     }
 
-    @Test
+    @Test(dependsOnMethods = {"AddEmployeeTOInventoryDept"})
     public void AddEmployeeToHrDept() throws InterruptedException {
         readExcelData eat = new readExcelData(
                 "/home/keby/IdeaProjects/Testing-erp-frontEnd/src/dataLocater/ExcelRead.xlsx");
@@ -295,7 +295,7 @@ public class addEmployee extends basesClass {
 
         }
     }
-    @Test
+    @Test(dependsOnMethods = {"AddEmployeeToHrDept"})
     public void addEmployeeToLogisticDept() throws InterruptedException {
         readExcelData eat = new readExcelData(
                 "/home/keby/IdeaProjects/Testing-erp-frontEnd/src/dataLocater/ExcelRead.xlsx");
@@ -363,7 +363,7 @@ public class addEmployee extends basesClass {
             }
         }
     }
-    @Test
+    @Test(dependsOnMethods ={"addEmployeeToLogisticDept"} )
     public void addEmployeeProcurementDept() throws InterruptedException {
         readExcelData eat = new readExcelData(
                 "/home/keby/IdeaProjects/Testing-erp-frontEnd/src/dataLocater/ExcelRead.xlsx");
@@ -433,7 +433,7 @@ public class addEmployee extends basesClass {
         }
     }
 }
-    @Test
+    @Test(dependsOnMethods = {"addEmployeeProcurementDept"})
     public void  addEmployeeToManufactureDept() throws InterruptedException {
         readExcelData eat = new readExcelData(
                 "/home/keby/IdeaProjects/Testing-erp-frontEnd/src/dataLocater/ExcelRead.xlsx");
