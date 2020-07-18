@@ -1,5 +1,6 @@
 package itPackage;
 
+import baseClass.basesClass;
 import org.openqa.selenium.By;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -7,7 +8,7 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class createAccount extends basesClass{
+public class createAccount extends basesClass {
 
      @DataProvider
     public Iterator<Object[]> getData()

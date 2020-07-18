@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Testing-erp-frontEnd(failed)">
+    <classes>
+      <class name="Employeepackage.addEmployee">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="setUpBrowser"/>
+          <include name="addEmployeeToSaleDept"/>
+          <include name="AddEmployeeToHrDept"/>
+          <include name="addEmployeeToManufactureDept"/>
+          <include name="AddEmployeeTOInventoryDept"/>
+          <include name="addEmployeeToLogisticDept"/>
+          <include name="addEmployeeToFinanceDept"/>
+          <include name="addEmployeeProcurementDept"/>
+        </methods>
+      </class> <!-- Employeepackage.addEmployee -->
+    </classes>
+  </test> <!-- Testing-erp-frontEnd(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->

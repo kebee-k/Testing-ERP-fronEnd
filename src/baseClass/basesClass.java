@@ -1,25 +1,26 @@
-package itPackage;
+package baseClass;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 public class basesClass {
-
         public static WebDriver driver;
         WebElement username,password;
 
-        @BeforeMethod
+        @BeforeClass
         public  void setUpBrowser() throws InterruptedException {
             System.setProperty("webdriver.gecko.driver", "/home/keby/Desktop/seleniumjava/geckodriver");
             driver = new FirefoxDriver();
-            driver.get("https://sparta-erp.web.app/");
+           driver.get("https://sparta-erp.web.app/");
+           // driver.get("http://localhost:3000/");
+
             System.out.println("start");
-            username= driver.findElement(By.name("username"));
-            username.sendKeys("admin");
+           username= driver.findElement(By.name("username"));
+           username.sendKeys("admin");
             Thread.sleep(50);
             password=driver.findElement(By.name("password"));
             password.sendKeys("admin");
@@ -34,10 +35,11 @@ public class basesClass {
             }
         }
 
-        @AfterMethod
-        public  void closeBrowser()
+        @AfterClass
+     public  void closeBrowser()
         {
             driver.quit();
         }
+
 
 }
