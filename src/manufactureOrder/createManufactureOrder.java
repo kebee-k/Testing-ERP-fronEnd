@@ -13,7 +13,7 @@ import java.util.Iterator;
 public class createManufactureOrder extends basesClass {
     @DataProvider
     public Iterator<Object[]> getData() {
-        ArrayList<Object[]> testData = readExcelFile.readExcelData();
+        ArrayList<Object[]> testData = readExcelData.readExcelData();
         return testData.iterator();
 
     }
@@ -80,6 +80,25 @@ public class createManufactureOrder extends basesClass {
         Thread.sleep(5000);
         driver.findElement(By.xpath("//button[text()='Confirm BOM']")).click();
         System.out.println("manufacture order dane");
+        try {
+            Thread.sleep(5000);
+
+        } catch (InterruptedException e) {
+
+            e.printStackTrace();
+        }
+    }
+    @Test(priority = 4)
+    public void manufactureOrderFinished() throws InterruptedException {
+
+        driver.findElement(By.xpath("//*[text()='Finance']")).click();
+        driver.findElement(By.xpath("//ul[@class='nav flex-column']//div[2]//div//li[11]//span")).click();
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("//div[@class='card-body']//div//table//tbody//tr//td[8]//button")).click();
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("//div[@class='card-body']//table//div//div[2]//button")).click();
+        Thread.sleep(50);
+        System.out.println("manufacture order finish");
         try {
             Thread.sleep(5000);
 

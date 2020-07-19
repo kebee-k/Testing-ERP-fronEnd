@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class createPurchaseOrder extends basesClass {
 
-    @Test()
+    @Test
     public void createPurchasesOrder() throws InterruptedException {
 
         driver.findElement(By.xpath("//*[text()='Procurment']")).click();
@@ -16,7 +16,7 @@ public class createPurchaseOrder extends basesClass {
         Select element = new Select(
                 driver.findElement(By.xpath("//div[@class='form-group']//select[@name='supplier']")));
         element.selectByVisibleText("DERBA PAINT MANUFACTURING PLC");
-        driver.findElement(By.xpath("//div[@class='col-sm-12']//textarea[@name='description']")).sendKeys("testin within script");
+        driver.findElement(By.xpath("//div[@class='col-sm-12']//textarea[@name='description']")).sendKeys("testing within script");
         Select ell = new Select(
                 driver.findElement(By.xpath("//div[@class='duplicatedForm row']//select[@class='form-control']")));
         ell.selectByVisibleText("Hydrogen");

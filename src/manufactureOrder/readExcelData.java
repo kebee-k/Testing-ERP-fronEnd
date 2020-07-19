@@ -1,8 +1,6 @@
 package manufactureOrder;
 
 import java.util.ArrayList;
-import java.util.Random;
-
 public class readExcelData {
 
         public static ArrayList<Object[]> readExcelData() {

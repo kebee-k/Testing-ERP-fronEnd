@@ -3,12 +3,23 @@ package salasOrder;
 import baseClass.basesClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 
 public class createSaleOrder extends basesClass {
-    @Test(priority = 1)
-    public void createSalesOrder() throws InterruptedException {
+    @DataProvider
+    public Iterator<Object[]> getData() {
+        ArrayList<Object[]> testData = readExcelFile.readExcelFile();
+        return testData.iterator();
+    }
+
+    @Test(dataProvider = "getData", priority = 1)
+    public void createSalesOrder(String customer, String desc,
+                                 String address, String order, String quantity) throws InterruptedException {
 
         driver.findElement(By.xpath("//*[text()='Sales']")).click();
         Thread.sleep(2000);
@@ -16,19 +27,22 @@ public class createSaleOrder extends basesClass {
         Thread.sleep(1000);
         Select element = new Select(driver.findElement(By.xpath("//div[@class='card-body']//form//div//div//select")));
         Thread.sleep(2000);
-        element.selectByVisibleText("NEFAS SILK PAINTS FACTORY");
-        driver.findElement(By.xpath("//div[@class='card-body']//form//div[2]//div//input[@name='shipmentAddress']")).sendKeys("Addis Ababa");
+        element.selectByVisibleText(customer);
+        driver.findElement(By.xpath("//div[@class='card-body']//form//div[2]//div//input[@name='shipmentAddress']"))
+                .sendKeys(desc);
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@class='card-body']//form//div[3]//div//textarea")).sendKeys("testing description");
+        driver.findElement(By.xpath("//div[@class='card-body']//form//div[3]//div//textarea")).
+                sendKeys(address);
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@class='card-body']//form//div[2]//div//input[@name='shipmentAddress']")).sendKeys("Addis Ababa");
+       // driver.findElement(By.xpath("//div[@class='card-body']//form//div[2]//div//input[@name='shipmentAddress']"))
+         //       .sendKeys(address);
         Thread.sleep(500);
         Select elm = new Select(driver.findElement(By.xpath("//div[@class='card-body']//form//div[5]//div//select")));
         Thread.sleep(2000);
-        elm.selectByVisibleText("Foam");
+        elm.selectByVisibleText(order);
         driver.findElement(By.xpath("//div[@class='card-body']//form//div[5]//div[2]//input")).clear();
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//div[@class='card-body']//form//div[5]//div[2]//input")).sendKeys("1");
+        driver.findElement(By.xpath("//div[@class='card-body']//form//div[5]//div[2]//input")).sendKeys(quantity);
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div[@class='card-body']//form//div[8]//button")).click();
         Thread.sleep(5);
