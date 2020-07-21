@@ -1,7 +1,6 @@
 package manufactureOrder;
 
 import baseClass.basesClass;
-import itPackage.readExcelFile;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.DataProvider;
