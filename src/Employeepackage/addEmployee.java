@@ -26,6 +26,7 @@ public class addEmployee extends basesClass {
             String birthDate = eat.getData(2, 1, 4);
             String hiredDate = eat.getData(2, 1, 5);
 
+
             // System.out.println("driver "+driver);
             driver.findElement(By.xpath("//*[text()='HR']")).click();
             Thread.sleep(500);
@@ -62,7 +63,7 @@ public class addEmployee extends basesClass {
             Thread.sleep(2000);
             Select ell3 = new Select(driver.findElement(
                     By.xpath("//div[@class='row']//div[@class='col-sm-12']//select[@name='termOfEmployment']")));
-            ell3.selectByVisibleText("Permanent");
+            ell3.selectByVisibleText("");
             Select ell4 = new Select(
                     driver.findElement(By.xpath("//div[@class='row']//div[@class='col-sm-12']//select[@name='country']")));
             ell4.selectByVisibleText("Ethiopia");
